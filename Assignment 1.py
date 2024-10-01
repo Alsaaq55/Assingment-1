@@ -35,6 +35,7 @@ class Customer:
     def display_customer_info(self):
         return f"Your Name: {self.__firstName} {self.__lastName}\nYour Email: {self.__email}"
 
+
 # Room class
 class Room:
     def __init__(self, roomID, roomType, pricePerNight, isAvailable):
@@ -71,6 +72,7 @@ class Room:
 
     def display_room_info(self):
         return f"Room Type: {self.__roomType}"
+
 
 # Reservation class
 class Reservation:
@@ -125,6 +127,11 @@ class Reservation:
                 f"Number of Nights: {self.__numNights}\nNumber of Rooms: 1\n"
                 f"Room 1: {self.__customer.get_firstName()} {self.__customer.get_lastName()}\n"
                 f"{self.__room.display_room_info()}")
+
+    # Cancel reservation (pass statement)
+    def cancel_reservation(self):
+        pass
+
 
 # Payment class
 class Payment:
@@ -194,8 +201,13 @@ room = Room(1, "2 Queen Beds / No Smoking / Desk / Safe / Coffee Maker", 970.00,
 reservation = Reservation(1001, "Mon, Sep 30, 2024", "Wed, Oct 2, 2024", 2, room, customer)
 payment = Payment(2001, "Khaled Ali", "Visa (ending in 1234)", 970.00, 2, 97.00, 2037.00)
 
+# Checking if setters and getters work
+print("Initial Customer ID:", customer.get_customerID())
+customer.set_customerID(102)
+print("Updated Customer ID:", customer.get_customerID())
+
 # Displaying all the reservation and payment information
-print("Your Reservation Is Confirmed")
+print("\nYour Reservation Is Confirmed")
 print(customer.display_customer_info())
 print("Hotel Confirmation Number: 52523687")
 print()
